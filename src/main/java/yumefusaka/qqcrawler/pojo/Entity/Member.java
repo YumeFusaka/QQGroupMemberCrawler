@@ -10,9 +10,8 @@ import lombok.Data;
 import java.time.LocalDateTime;
 
 @Data
-@TableName("user")
-@Builder
-public class User {
+@TableName("member")
+public class Member {
     @TableId(value = "id", type = IdType.AUTO)
     private Long id;
 

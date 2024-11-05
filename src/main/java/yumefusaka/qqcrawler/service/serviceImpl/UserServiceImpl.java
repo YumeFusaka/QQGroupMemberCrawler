@@ -17,18 +17,4 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
     @Autowired
     private UserMapper userMapper;
 
-    @Override
-    public void mySave(User user) {
-
-        QueryWrapper<User> queryWrapper = new QueryWrapper<>();
-        queryWrapper.eq("qq", user.getQq());
-        List<User> users = userMapper.selectList(queryWrapper);
-        if (users.isEmpty())
-            userMapper.insert(user);
-        else {
-            UpdateWrapper<User> updateWrapper = new UpdateWrapper<>();
-            updateWrapper.eq("qq", user.getQq());
-            userMapper.update(user, updateWrapper);
-        }
-    }
 }
